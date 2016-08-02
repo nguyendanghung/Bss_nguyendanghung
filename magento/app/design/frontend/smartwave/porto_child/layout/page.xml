@@ -80,7 +80,6 @@ Default layout, loads most of the pages
                 <action method="setElementClass"><value>top-container</value></action>
                 <block type="core/template" name="pageHeader" template="page/html/topcontainer.phtml">
                     <block type="core/template" name="page.header" template="page/html/page_header.phtml"/>
-                    <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
                 </block>
             </block>
 
@@ -90,6 +89,10 @@ Default layout, loads most of the pages
 
             <block type="core/messages" name="global_messages" as="global_messages"/>
             <block type="core/messages" name="messages" as="messages"/>
+
+            <block type="core/text_list" name="new-header" as="new-header" translate="label">
+                <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
+            </block>
 
             <block type="core/text_list" name="content" as="content" translate="label">
                 <label>Main Content Area</label>
@@ -164,6 +167,8 @@ Default layout, loads most of the pages
             <action method="setIsHandle"><applied>1</applied></action>
         </reference>
     </page_one_column>
+
+
 
     <page_two_columns_left translate="label">
         <label>All Two-Column Layout Pages (Left Column)</label>

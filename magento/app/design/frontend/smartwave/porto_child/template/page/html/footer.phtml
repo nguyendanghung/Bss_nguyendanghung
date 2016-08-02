@@ -1,88 +1,5 @@
 <style>
-    .footer-bottom{
-        background-color: white;
-        height: ;
-    }
-    .footer-bottom address{
-        float: left;
-        padding-left:10px;
-    }
-    .footer-bottom .custom-block{
-        float: right;
-    }
-    .link-bottom{
-        font-weight: bold;
-        text-align: left;
-    }
-    .link-bottom a{
-        color: #474747;
-    }
-    .link-bottom a:hover{
-        color: red;
-        text-decoration: none;
-    }
-    .link-bottom span{
-        padding-left: 10px;
-    }
-    .footer-middle, .footer{
-        background-color: #e9e9e9;
-    }
-    .block .block-title strong span {
-        font-weight: bold;
-        color: #474747;
-        cursor: pointer;
-    }
-    .footer-middle a{
-        color: #474747;
-        font-size:14px;
-        font-weight: normal;
-    }
-    .footer-middle a:hover{
-        color: red;
-    }
-    .line-footer{
-        max-width: 100%;
-        height: 2px;
-        background-color: #dfdfdf;
-    }
-    .que-cmt{
-        padding-top: 40px;
-        text-align: left;
-    }
-    .question{
-        font-size: 16px;
-        font-weight: bold;
-        color: #474747;
 
-    }
-    #contact{
-        font-size: 16px;
-        font-weight: bold;
-        color: white;
-        background-color: #dd3626;
-        border: none;
-        height: 35px;
-        padding: 10px;
-        margin: 0 5px 0 5px;
-    }
-    #contact:hover{
-        background-color: #b4291c;
-    }
-    .phone{
-        color: black;
-        font-weight: bold;
-    }
-    .connect{
-        text-align: left;
-        font-size: 16px;
-        font-weight: bold;
-        color: #474747;
-        padding-top: 40px;
-    }
-    .social{
-        margin-left: 15px;
-        cursor: pointer;
-    }
 </style>
 
 <ul class="links">
@@ -120,6 +37,24 @@
             }
             if ($footer['footer_middle_enabled']) {
                 ?>
+                <div class="container-fluid">
+                    <div class="first-footer">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-12 sign-up">
+                                    <p>Sign up to our latest products <br> and special offers</p>
+                                </div>
+                                <div class="col-md-3  col-sm-6 col-md-offset-1 email-box">
+                                    <span>Enter Your Email</span>
+                                </div>
+                                <div class="col-md-4 col-sm-6 text-sign">
+                                    <input type="text" name="email-txt" id="email-txt">
+                                    <input type="button" name="email-btn" id="email-btn" value="SIGN UP >">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="footer-middle">
                     <div class="container">
                         <div class="row">
@@ -281,3 +216,4 @@
         });
     </script>
 </ul>
+

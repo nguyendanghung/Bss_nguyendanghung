@@ -33,6 +33,23 @@
     </default>
 
     <contacts_index_index translate="label">
+        <reference name="breadcrumbs" as="breadcrumbs">
+            <action method="addCrumb">
+                <crumbName>home</crumbName>
+                <crumbInfo>
+                    <label>Home</label>
+                    <title>Home</title>
+                    <link>/</link>
+                </crumbInfo>
+            </action>
+            <action method="addCrumb">
+                <crumbName>contacts</crumbName>
+                <crumbInfo>
+                    <label>Contact us</label>
+                    <title>Contact us</title>
+                </crumbInfo>
+            </action>
+        </reference>
         <label>Contact Us Form</label>
         <reference name="head">
             <action method="setTitle" translate="title" module="contacts"><title>Contact Us</title></action>
@@ -44,5 +61,6 @@
         <reference name="content">
             <block type="core/template" name="contactForm" template="contacts/form.phtml"/>
         </reference>
+
     </contacts_index_index>
 </layout>

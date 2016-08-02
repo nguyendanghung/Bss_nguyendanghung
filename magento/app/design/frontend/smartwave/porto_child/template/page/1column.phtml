@@ -41,18 +41,20 @@
     <div class="page">
         <?php echo $this->getChildHtml('custom_notice') ?>
         <?php echo $this->getChildHtml('header') ?>
-        <div class="top-main">
-            <h1>CONTACT US</h1>
-        </div>
+        <?php echo $this->getChildHtml('new-header')?>
+<!--        <div class="top-main row">-->
+<!--            <h1>CONTACT US</h1>-->
+<!--        </div>-->
         <div class="main-container col1-layout">
-            <div class="wrap">
+
                 <div class="main container">
                     <div class="col-main">
                         <?php echo $this->getChildHtml('global_messages') ?>
                         <?php echo $this->getChildHtml('content') ?>
                     </div>
+<!--                    <div class="col-sm-12">--><?php //echo $this->getChildHtml('right') ?><!--</div>-->
                 </div>
-            </div>
+
         </div>
         <?php echo $this->getChildHtml('topContainer') ?>
         <?php echo $this->getChildHtml('footer') ?>

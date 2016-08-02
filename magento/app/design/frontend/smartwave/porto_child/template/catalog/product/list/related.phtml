@@ -35,10 +35,10 @@
                         </div>
                         <div class="product-details col-xs-6">
                             <p class="product-name"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></p>
-                            <?php 
+                            <?php
                             if (Mage::helper('catalog')->isModuleEnabled('Mage_Review')):
                             ?>
-                            <?php 
+                            <?php
                                 $review_html = $this->getReviewsSummaryHtml($_item, 'short');
                                 if($review_html){
                                     echo $review_html;
@@ -49,7 +49,7 @@
                                         <div class="rating" style="width:0"></div>
                                     </div>
                                 </div>
-                            <?php                            
+                            <?php
                                 }
                             ?>
                             <?php else: ?>
@@ -58,7 +58,7 @@
                                         <div class="rating" style="width:0"></div>
                                     </div>
                                 </div>
-                            <?php 
+                            <?php
                             endif;
                             ?>
                             <?php echo $this->getPriceHtml($_item, true, '-related') ?>

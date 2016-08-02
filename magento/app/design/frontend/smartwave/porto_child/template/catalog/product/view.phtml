@@ -1,3 +1,129 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+<style>
+    .come-back{
+        padding-bottom: 25px;
+    }
+    .come-back a{
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .product-name{
+        font-size: 28px;
+        font-family: 'PT Sans', sans-serif;
+        color: rgb(68, 68, 68);
+        font-weight: bold;
+        line-height: 1.071;
+    }
+    .product-view .product-info{
+        padding-bottom: 0;
+        margin-top: 0;
+        border-bottom: 0    ;
+    }
+    .product-view .product-shop .price-box .regular-price .price{
+        font-size: 35px;
+        font-family: 'PT Sans', sans-serif;
+        font-weight: bold;
+        font-variant: small-caps;
+        vertical-align: super;
+        line-height: 1.2;
+        color: #dd3626;
+
+    }
+    /*--------- CART--------------*/
+    .add-to-cart button.button{
+        width:225px;
+        height:50px;
+
+    }
+    .add-to-cart button.button span{
+        background-color: #86ca3e;
+        border-radius: 0;
+        height: 100%;
+        line-height: 50px;
+    }
+    .add-to-cart .qty{
+        height: 30px;
+        width: 50px !important;
+        margin-left: 5px;
+    }
+    .add-to-cart label{
+        display: block;
+        padding-bottom: 7px;
+        font-size: 11px;
+        font-family: 'Open Sans', sans-serif;
+        color: rgb(68, 68, 68);
+        font-weight: bold;
+        line-height: 1.2;
+    }
+    .short-description .std{
+        font-size: 14px;
+        font-family: 'Open Sans', sans-serif;
+        color: rgb(68, 68, 68);
+        line-height: 1.2;
+
+    }
+    .col1-layout .product-view .product-info + div.clearer{
+        border-bottom: none;
+    }
+    .add-to-box{
+        margin-top: 0;
+    }
+    /*----------------image------------------*/
+
+    .product-view .product-img-box li.etalage_thumb, .product-view .product-img-box li.etalage_small_thumbs li{
+        border:none;
+    }
+                .col-main .category-products .products-grid li.item .product-image, .product-image-area{
+        border-radius: 0;
+        border:0;
+    }
+    .etalage_small_thumbs ul li{
+        opacity:1 !important;
+    }
+    /*--------------ALSO Product------------------*/
+    .col-main .category-products .products-grid li.item .details-area{
+        padding:0;
+        text-align: left;
+    }
+    .ratings{
+        display: none;
+    }
+    .regular-price .price{
+        color: #dd3626;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .col-main .category-products .products-grid li.item .details-area .product-name a{
+        font-size: 13px;
+        font-family: 'Open Sans', sans-serif;
+        color: rgb(68, 68, 68);
+        font-weight: bold;
+    }
+    .item .details-area .actions{
+        margin: 0;
+    }
+    .item .details-area .actions a.addtocart{
+        width:100%;
+        text-align: center;
+        background-color: #86ca3e;
+        color: white;
+        height:35px;
+        margin: 0;
+    }
+    .item .details-area .actions a.comparelink{
+        display: none;
+    }
+
+    a.addtocart{
+        border-radius: 0;
+    }
+    .item:hover .details-area .actions a.addtocart{
+        background-color: #86ca3e;
+        border-color: #86ca3e;
+    }
+</style>
 <?php
     $_helper = $this->helper('catalog/output');
     $helper_richsnippets = $this->helper('porto/richsnippets');
@@ -19,10 +145,16 @@
 ?>
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+    function goBack() {
+        window.history.back();
+    }
 </script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 <div class="product-view <?php if($move_product_tab): ?>moved-tab<?php endif;?>" <?php if($enabled_richsnippets): ?><?php echo $helper_richsnippets->getProductItemscope(); ?><?php endif; ?>>
     <div class="product-essential">
+        <div class="come-back">
+            <a href="" onclick="goBack()">< Back</a>
+        </div>
     <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
         <?php echo $this->getBlockHtml('formkey') ?>
         <div class="no-display">
@@ -94,9 +226,9 @@ if($enable_addtocart_sticky){
 <!--					--><?php //endif; ?>
                 </div>
                 <?php if($_product->isSaleable()): ?>
-                <?php $buttonTitle = $this->__('Add to Cart'); ?>
+                <?php $buttonTitle = $this->__('ADD TO BASKET'); ?>
                     <div class="add-to-cart">
-                        <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><i class="icon-cart"></i><?php echo $buttonTitle ?></span></span></button>
+                        <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?><i class="icon-cart"></i></span></span></button>
                     </div>
                 <?php endif; ?>
             </div>
@@ -112,37 +244,37 @@ if($enable_addtocart_sticky){
             <?php
                 if (Mage::getStoreConfig("porto_settings/product_view/prev_next",$code)){
             ?>
-                <div class="prev-next-products">
-                    <?php $_prev = Mage::helper('porto')->getPreviousProduct(); ?>
-                    <?php $_next = Mage::helper('porto')->getNextProduct(); ?>
-                     
-                    <?php if($_prev): ?>
-                    <div class="product-nav product-prev">
-                        <a href="<?php echo $_prev->getProductUrl();?>" title="<?php echo $this->__("Previous Product"); ?>">
-                            <?php echo Mage::getStoreConfig("porto_settings/product_view/prev_text",$code); ?>
-                        </a>
-                        <div class="product-pop theme-border-color">
-                            <?php
-                            $image_src = $this->helper('catalog/image')->init($_prev, 'image')->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(80);
-                            ?>
-                            <img class="product-image" src="<?php echo $image_src; ?>" alt="<?php echo $this->__('Previous');?>"/>
-                            <h3 class="product-name"><?php echo $_helper->productAttribute($_prev, $_prev->getName(), 'name') ?></h3>
-                        </div>
-                    </div>
-                    <?php endif; ?>
-                    <?php if($_next): ?>
-                    <div class="product-nav product-next">
-                        <a class="product-next" href="<?php echo $_next->getProductUrl();?>" title="<?php echo $this->__("Next Product"); ?>"><?php echo Mage::getStoreConfig("porto_settings/product_view/next_text",$code); ?></a>
-                        <div class="product-pop theme-border-color">
-                            <?php
-                            $image_src = $this->helper('catalog/image')->init($_next, 'image')->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(80);
-                            ?>
-                            <img class="product-image" src="<?php echo $image_src; ?>" alt="<?php echo $this->__('Previous');?>"/>
-                            <h3 class="product-name"><?php echo $_helper->productAttribute($_next, $_next->getName(), 'name') ?></h3>
-                        </div>
-                    </div>
-                    <?php endif; ?>
-                </div>
+<!--                <div class="prev-next-products">-->
+<!--                    --><?php //$_prev = Mage::helper('porto')->getPreviousProduct(); ?>
+<!--                    --><?php //$_next = Mage::helper('porto')->getNextProduct(); ?>
+<!--                     -->
+<!--                    --><?php //if($_prev): ?>
+<!--                    <div class="product-nav product-prev">-->
+<!--                        <a href="--><?php //echo $_prev->getProductUrl();?><!--" title="--><?php //echo $this->__("Previous Product"); ?><!--">-->
+<!--                            --><?php //echo Mage::getStoreConfig("porto_settings/product_view/prev_text",$code); ?>
+<!--                        </a>-->
+<!--                        <div class="product-pop theme-border-color">-->
+<!--                            --><?php
+//                            $image_src = $this->helper('catalog/image')->init($_prev, 'image')->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(80);
+//                            ?>
+<!--                            <img class="product-image" src="--><?php //echo $image_src; ?><!--" alt="--><?php //echo $this->__('Previous');?><!--"/>-->
+<!--                            <h3 class="product-name">--><?php //echo $_helper->productAttribute($_prev, $_prev->getName(), 'name') ?><!--</h3>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    --><?php //endif; ?>
+<!--                    --><?php //if($_next): ?>
+<!--                    <div class="product-nav product-next">-->
+<!--                        <a class="product-next" href="--><?php //echo $_next->getProductUrl();?><!--" title="--><?php //echo $this->__("Next Product"); ?><!--">--><?php //echo Mage::getStoreConfig("porto_settings/product_view/next_text",$code); ?><!--</a>-->
+<!--                        <div class="product-pop theme-border-color">-->
+<!--                            --><?php
+//                            $image_src = $this->helper('catalog/image')->init($_next, 'image')->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(80);
+//                            ?>
+<!--                            <img class="product-image" src="--><?php //echo $image_src; ?><!--" alt="--><?php //echo $this->__('Previous');?><!--"/>-->
+<!--                            <h3 class="product-name">--><?php //echo $_helper->productAttribute($_next, $_next->getName(), 'name') ?><!--</h3>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    --><?php //endif; ?>
+<!--                </div>-->
             <?php
                 }
             ?>
@@ -195,6 +327,7 @@ if($enable_addtocart_sticky){
                 <?php if ($_product->isSaleable() && $this->hasOptions()):?>
                     <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
                 <?php endif;?>
+
                 <?php echo $this->getChildHtml('smartwave_sharetool'); ?>
             </div>
 

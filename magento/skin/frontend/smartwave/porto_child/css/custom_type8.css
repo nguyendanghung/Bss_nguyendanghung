@@ -90,6 +90,25 @@
 .menu-all-pages-container{
     padding:0 !important;
 }
+.fixed-header ul.menu >li.act, .main-nav ul.menu >li.act{
+    display: inline-block    !important;
+}
+.fixed-header ul.menu >li.act, .main-nav ul.menu >li.act a::after{
+    display: none;
+    border-radius: 0;
+}
+.main-nav ul.menu >li.menu-item-has-children{
+    padding: 16px 19px;
+    margin-bottom: 0;
+}
+.header-container.type8 .main-nav ul.menu>li.menu-item-has-children>a{
+    padding-bottom: 0;
+    padding-right: 0;
+}
+.main-nav ul.menu >li.menu-item-has-children.act:hover{
+    padding: 16px 19px;
+    border-radius:0;
+}
 .header-container.type8 .main-nav .menu{
     padding-right: inherit;
     padding-left: 30px;
@@ -108,6 +127,8 @@
 /*}*/
 .fixed-header ul.menu >li.act, .main-nav ul.menu >li.act{
     display: none;
+    border-radius: 0;
+    background-color: black;
 }
 .header-container.type8 .main-nav ul.menu>li>a{
     padding:0;

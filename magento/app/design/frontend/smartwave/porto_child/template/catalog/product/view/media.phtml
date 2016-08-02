@@ -1,3 +1,27 @@
+<style>
+    .product-view .product-img-box .etalage .etalage_thumb_active a.fancy-images{
+        font-size: 13px;
+        font-family: "OpenSans";
+        color: rgb(221, 54, 38);
+        font-weight: bold;
+        line-height: 3;
+        width: 100px;
+        height: 50px;
+        right: 39%;
+        bottom: 48%;
+        display: none;
+    }
+    .product-view .product-img-box li.etalage_thumb:hover .fancy-images{
+        display: block;
+    }
+    .product-view .product-img-box li.etalage_thumb:hover{
+        opacity: 0.5;
+    }
+    .btn-default{
+        background-color: white;
+    }
+
+</style>
 <?php
     $_product = $this->getProduct();
     $_helper = $this->helper('catalog/output');
@@ -27,7 +51,7 @@
             else
                 $image_src = $this->helper('catalog/image')->init($_product, 'thumbnail', $_image->getFile())->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize($ratio_width);
         ?>
-        <a rel="gallery" class="fancy-images fancy-images_<?php echo $rnd_str; ?>" href="<?php echo $image_src; ?>"><span class="glyphicon glyphicon-search"></span></a>
+        <a rel="gallery" class="btn btn-default fancy-images fancy-images_<?php echo $rnd_str; ?>" href="<?php echo $image_src; ?>">ZOOM <span class="glyphicon glyphicon-search"></span></a>
         <img class="etalage_thumb_image" src="<?php echo $image_src; ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>"/>
         <img class="etalage_source_image" src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail', $_image->getFile())->resize(100, 100*$ratio)?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>"/>
     </li>
@@ -42,7 +66,7 @@
             else
                 $image_src = $this->helper('catalog/image')->init($_product, 'image')->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize($ratio_width);
         ?>
-        <a class="fancy-images fancy-images_<?php echo $rnd_str; ?>" href="<?php echo $image_src; ?>"><span class="glyphicon glyphicon-search"></span></a>
+        <a class="fancy-images fancy-images_<?php echo $rnd_str; ?>" href="<?php echo $image_src; ?>">ZOOM<span class="glyphicon glyphicon-search"></span></a>
         <img class="etalage_thumb_image" src="<?php echo $image_src; ?>" alt="<?php echo $this->htmlEscape($this->getImageLabel()) ?>"/>
         <img class="etalage_source_image" src="<?php echo (!$aspect_ratio)?$this->helper('catalog/image')->init($_product, 'image')->resize(100, $ratio_height/$ratio_width*100):$this->helper('catalog/image')->init($_product, 'image')->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(100);?>" alt="<?php echo $this->htmlEscape($this->getImageLabel()) ?>" />
     </li>

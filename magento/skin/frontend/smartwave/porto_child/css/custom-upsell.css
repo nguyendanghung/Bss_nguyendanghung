@@ -1,0 +1,28 @@
+.product-view .box-up-sell >h2{
+    background: none;
+    text-align: center;
+}
+.product-view .box-up-sell >h2 span{
+    font-size: 35px;
+    font-family: 'Oswald', sans-serif;
+    color: rgb(68, 68, 68);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0 0 15px;
+}
+.product-label{
+    right:0;
+    top:inherit;
+    width: 30px;
+    background-color: red;
+    height: 30px;
+    border-radius: 50%;
+}
+span.new-product-icon{
+    border-radius: inherit;
+    background-color: transparent;
+    padding: 0;
+    line-height: 2.5;
+}

@@ -53,6 +53,11 @@
             <action method="addCss" condition="0"><stylesheet>css/custom_type8.css</stylesheet></action>
             <action method="addCss" condition="0"><stylesheet>css/contacts-form.css</stylesheet></action>
             <action method="addCss" condition="0"><stylesheet>css/custom-footer.css</stylesheet></action>
+            <action method="addCss" condition="0"><stylesheet>css/custom-product-view.css</stylesheet></action>
+            <action method="addCss" condition="0"><stylesheet>css/custom-upsell.css</stylesheet></action>
+            <action method="addCss" condition="0"><stylesheet>css/custom-media-product.css</stylesheet></action>
+
+
             <!--end add CSS-->
 
             <action method="addCss" ifconfig="porto_settings/general/rtl" condition="1"><stylesheet>css/rtl-custom.css</stylesheet></action>

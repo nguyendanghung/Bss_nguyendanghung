@@ -1,0 +1,201 @@
+.come-back{
+    padding-bottom: 25px;
+}
+.come-back a{
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+.product-name{
+    font-size: 28px;
+    font-family: 'PT Sans', sans-serif;
+    color: rgb(68, 68, 68);
+    font-weight: bold;
+    line-height: 1.071;
+}
+.product-view .product-info{
+    padding-bottom: 0;
+    margin-top: 0;
+    border-bottom: 0    ;
+}
+.product-view .product-shop .price-box .regular-price .price{
+    font-size: 35px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+    font-variant: small-caps;
+    vertical-align: super;
+    line-height: 1.2;
+    color: #dd3626;
+
+}
+/*--------- CART--------------*/
+.add-to-cart button.button{
+    width:225px;
+    height:50px;
+
+}
+.add-to-cart button.button span{
+    background-color: #86ca3e;
+    border-radius: 0;
+    height: 100%;
+    line-height: 50px;
+}
+.add-to-cart .qty{
+    height: 30px;
+    width: 50px !important;
+    margin-left: 5px;
+}
+.add-to-cart label{
+    display: block;
+    padding-bottom: 7px;
+    font-size: 11px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(68, 68, 68);
+    font-weight: bold;
+    line-height: 1.2;
+}
+.short-description .std{
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(68, 68, 68);
+    line-height: 1.2;
+
+}
+.col1-layout .product-view .product-info + div.clearer{
+    border-bottom: none;
+}
+.add-to-box{
+    margin-top: 0;
+}
+/*----------------image------------------*/
+
+.product-view .product-img-box li.etalage_thumb, .product-view .product-img-box li.etalage_small_thumbs li{
+    border:none;
+}
+.col-main .category-products .products-grid li.item .product-image, .product-image-area{
+    border-radius: 0;
+    border:0;
+}
+.etalage_small_thumbs ul li{
+    opacity:1 !important;
+}
+/*--------------ALSO Product------------------*/
+.col-main .category-products .products-grid li.item .details-area{
+    padding:0;
+    text-align: left;
+}
+.ratings{
+    display: none;
+}
+.regular-price .price{
+    color: #dd3626;
+    font-size: 25px;
+    font-weight: bold;
+}
+.col-main .category-products .products-grid li.item .details-area .product-name a{
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(68, 68, 68);
+    font-weight: bold;
+}
+.item .details-area .actions{
+    margin: 0;
+}
+.item .details-area .actions a.addtocart{
+    width:100%;
+    text-align: center;
+    background-color: #86ca3e;
+    color: white;
+    height:35px;
+    margin: 0;
+}
+.item .details-area .actions a.comparelink{
+    display: none;
+}
+
+a.addtocart{
+    border-radius: 0;
+}
+.item:hover .details-area .actions a.addtocart{
+    background-color: #86ca3e;
+    border-color: #86ca3e;
+}
+.also-customer{
+    height:95px;
+    background: url("../images/back-ground.png");
+    background-size: cover;
+    background-position: center center;
+    margin-top: 45px;
+}
+.also-content{
+    padding:25px 15px;
+}
+.logo-also{
+    width:45px;
+    margin-right: 9px;
+    float: left;
+}
+.logo-also img{
+    height:100%;
+    width:auto;
+}
+.text-also{
+    padding-top: 8px;
+    float: left;
+}
+.text-also p{
+    margin:0;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    line-height: 1.2;
+}
+.text-also span{
+    margin:0;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(0, 0, 0);
+    line-height: 1.2;
+}
+.link-also{
+    float: left;
+}
+.link-also p{
+    font-size: 20px;
+    font-family: 'PT Sans', sans-serif;
+    color: rgb(68, 68, 68);
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: left;
+    margin: 0;
+    padding-bottom: 5px;
+}
+.link-also span{
+
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(221, 54, 38);
+    line-height: 1.2;
+    text-align: left;
+    -moz-transform: matrix( 0.80413006038838,0,0,0.80725723284545,0,0);
+    -webkit-transform: matrix( 0.80413006038838,0,0,0.80725723284545,0,0);
+    -ms-transform: matrix( 0.80413006038838,0,0,0.80725723284545,0,0);
+}
+@media (max-width: 425px) {
+    .link-also > p{
+        text-align: center !important;
+    }
+    .link-also{
+        float: none !important;
+    }
+    .link-also > span{
+        display: none;
+    }
+    .also-content {
+        padding: 25px 60px;
+    }
+    .also-customer{
+        height:auto;
+    }
+}

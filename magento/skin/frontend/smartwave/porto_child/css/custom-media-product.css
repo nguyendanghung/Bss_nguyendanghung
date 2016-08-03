@@ -1,0 +1,22 @@
+.product-view .product-img-box .etalage .etalage_thumb_active a.fancy-images{
+    font-size: 13px;
+    font-family: "OpenSans";
+    color: rgb(221, 54, 38);
+    font-weight: bold;
+    line-height: 3;
+    width: 100px;
+    height: 50px;
+    right: 39%;
+    bottom: 48%;
+    display: none;
+}
+.product-view .product-img-box li.etalage_thumb:hover .fancy-images{
+    display: block;
+    background-color: white;
+}
+.product-view .product-img-box li.etalage_thumb:hover{
+    opacity: 0.5;
+}
+.btn-default{
+    background-color: white;
+}

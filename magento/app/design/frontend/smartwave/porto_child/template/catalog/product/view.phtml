@@ -1,5 +1,6 @@
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+<!--<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>-->
+<!--<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>-->
+<!--<link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>-->
 <style>
     .come-back{
         padding-bottom: 25px;
@@ -123,6 +124,85 @@
         background-color: #86ca3e;
         border-color: #86ca3e;
     }
+    .also-customer{
+        height:95px;
+        background: url("../skin/frontend/smartwave/porto_child/images/back-ground.png");
+        background-size: cover;
+        background-position: center center;
+        margin-top: 45px;
+    }
+    .also-content{
+        padding:25px 15px;
+    }
+    .logo-also{
+        width:45px;
+        margin-right: 9px;
+        float: left;
+    }
+    .logo-also img{
+        height:100%;
+        width:auto;
+    }
+    .text-also{
+        padding-top: 8px;
+        float: left;
+    }
+    .text-also p{
+        margin:0;
+        font-size: 14px;
+        font-family: 'Open Sans', sans-serif;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        line-height: 1.2;
+    }
+    .text-also span{
+        margin:0;
+        font-size: 14px;
+        font-family: 'Open Sans', sans-serif;
+        color: rgb(0, 0, 0);
+        line-height: 1.2;
+    }
+    .link-also{
+        float: left;
+    }
+    .link-also p{
+        font-size: 20px;
+        font-family: 'PT Sans', sans-serif;
+        color: rgb(68, 68, 68);
+        font-weight: bold;
+        line-height: 1.2;
+        text-align: left;
+        margin: 0;
+        padding-bottom: 5px;
+    }
+    .link-also span{
+
+        font-size: 16px;
+        font-family: 'Open Sans', sans-serif;
+        color: rgb(221, 54, 38);
+        line-height: 1.2;
+        text-align: left;
+        -moz-transform: matrix( 0.80413006038838,0,0,0.80725723284545,0,0);
+        -webkit-transform: matrix( 0.80413006038838,0,0,0.80725723284545,0,0);
+        -ms-transform: matrix( 0.80413006038838,0,0,0.80725723284545,0,0);
+    }
+    @media (max-width: 425px) {
+        .link-also > p{
+            text-align: center !important;
+        }
+        .link-also{
+            float: none !important;
+        }
+        .link-also > span{
+            display: none;
+        }
+        .also-content {
+            padding: 25px 60px;
+        }
+        .also-customer{
+            height:auto;
+        }
+    }
 </style>
 <?php
     $_helper = $this->helper('catalog/output');
@@ -153,7 +233,10 @@
 <div class="product-view <?php if($move_product_tab): ?>moved-tab<?php endif;?>" <?php if($enabled_richsnippets): ?><?php echo $helper_richsnippets->getProductItemscope(); ?><?php endif; ?>>
     <div class="product-essential">
         <div class="come-back">
-            <a href="" onclick="goBack()">< Back</a>
+            <div class="container">
+                    <a href="" onclick="goBack()">< Back</a>
+            </div>
+
         </div>
     <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
         <?php echo $this->getBlockHtml('formkey') ?>
@@ -233,110 +316,164 @@ if($enable_addtocart_sticky){
                 <?php endif; ?>
             </div>
         </div>
+
 <?php
 }
 ?>
         <div class="row">
-            <div class="product-img-box col-sm-8">
-                <?php echo $this->getChildHtml('media') ?>
-            </div>
-            <div class="product-shop col-sm-4">
-            <?php
-                if (Mage::getStoreConfig("porto_settings/product_view/prev_next",$code)){
-            ?>
-<!--                <div class="prev-next-products">-->
-<!--                    --><?php //$_prev = Mage::helper('porto')->getPreviousProduct(); ?>
-<!--                    --><?php //$_next = Mage::helper('porto')->getNextProduct(); ?>
-<!--                     -->
-<!--                    --><?php //if($_prev): ?>
-<!--                    <div class="product-nav product-prev">-->
-<!--                        <a href="--><?php //echo $_prev->getProductUrl();?><!--" title="--><?php //echo $this->__("Previous Product"); ?><!--">-->
-<!--                            --><?php //echo Mage::getStoreConfig("porto_settings/product_view/prev_text",$code); ?>
-<!--                        </a>-->
-<!--                        <div class="product-pop theme-border-color">-->
-<!--                            --><?php
+            <div class="container">
+                <div class="row">
+                    <div class="product-img-box col-sm-8">
+                        <?php echo $this->getChildHtml('media') ?>
+                    </div>
+                    <div class="product-shop col-sm-4">
+                        <?php
+                        if (Mage::getStoreConfig("porto_settings/product_view/prev_next",$code)){
+                            ?>
+                            <!--                <div class="prev-next-products">-->
+                            <!--                    --><?php //$_prev = Mage::helper('porto')->getPreviousProduct(); ?>
+                            <!--                    --><?php //$_next = Mage::helper('porto')->getNextProduct(); ?>
+                            <!--                     -->
+                            <!--                    --><?php //if($_prev): ?>
+                            <!--                    <div class="product-nav product-prev">-->
+                            <!--                        <a href="--><?php //echo $_prev->getProductUrl();?><!--" title="--><?php //echo $this->__("Previous Product"); ?><!--">-->
+                            <!--                            --><?php //echo Mage::getStoreConfig("porto_settings/product_view/prev_text",$code); ?>
+                            <!--                        </a>-->
+                            <!--                        <div class="product-pop theme-border-color">-->
+                            <!--                            --><?php
 //                            $image_src = $this->helper('catalog/image')->init($_prev, 'image')->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(80);
 //                            ?>
-<!--                            <img class="product-image" src="--><?php //echo $image_src; ?><!--" alt="--><?php //echo $this->__('Previous');?><!--"/>-->
-<!--                            <h3 class="product-name">--><?php //echo $_helper->productAttribute($_prev, $_prev->getName(), 'name') ?><!--</h3>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    --><?php //endif; ?>
-<!--                    --><?php //if($_next): ?>
-<!--                    <div class="product-nav product-next">-->
-<!--                        <a class="product-next" href="--><?php //echo $_next->getProductUrl();?><!--" title="--><?php //echo $this->__("Next Product"); ?><!--">--><?php //echo Mage::getStoreConfig("porto_settings/product_view/next_text",$code); ?><!--</a>-->
-<!--                        <div class="product-pop theme-border-color">-->
-<!--                            --><?php
+                            <!--                            <img class="product-image" src="--><?php //echo $image_src; ?><!--" alt="--><?php //echo $this->__('Previous');?><!--"/>-->
+                            <!--                            <h3 class="product-name">--><?php //echo $_helper->productAttribute($_prev, $_prev->getName(), 'name') ?><!--</h3>-->
+                            <!--                        </div>-->
+                            <!--                    </div>-->
+                            <!--                    --><?php //endif; ?>
+                            <!--                    --><?php //if($_next): ?>
+                            <!--                    <div class="product-nav product-next">-->
+                            <!--                        <a class="product-next" href="--><?php //echo $_next->getProductUrl();?><!--" title="--><?php //echo $this->__("Next Product"); ?><!--">--><?php //echo Mage::getStoreConfig("porto_settings/product_view/next_text",$code); ?><!--</a>-->
+                            <!--                        <div class="product-pop theme-border-color">-->
+                            <!--                            --><?php
 //                            $image_src = $this->helper('catalog/image')->init($_next, 'image')->constrainOnly(FALSE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(80);
 //                            ?>
-<!--                            <img class="product-image" src="--><?php //echo $image_src; ?><!--" alt="--><?php //echo $this->__('Previous');?><!--"/>-->
-<!--                            <h3 class="product-name">--><?php //echo $_helper->productAttribute($_next, $_next->getName(), 'name') ?><!--</h3>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    --><?php //endif; ?>
-<!--                </div>-->
-            <?php
-                }
-            ?>
-                <div class="product-name">
-                    <h1 <?php if($enabled_richsnippets): ?>itemprop="name"<?php endif; ?>><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
-                </div>
-                <div class="product-info">
-                    <div <?php if($enabled_richsnippets) echo $helper_richsnippets->getOfferItemscope(); ?>>
-                        <?php echo $this->getChildHtml('product_type_data'); ?>
-                        <?php echo $this->getTierPriceHtml(); ?>
-                        <?php echo $price_properties; ?>
-                    </div>
-                    <?php echo $this->getChildHtml('extrahint') ?>
-<!--                    --><?php //if ($this->canEmailToFriend()): ?>
-<!--                        <p class="email-friend"><a href="--><?php //echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?><!--">--><?php //echo $this->__('Email to a Friend') ?><!--</a></p>-->
-<!--                    --><?php //endif; ?>
-                    <?php if($sku = $_product->getSku()): ?>
-                        <?php if($enabled_richsnippets): ?><meta itemprop="productID" content="sku:<?php echo $sku; ?>" /><?php endif; ?>
-                    <?php endif; ?>
-                    <?php echo $this->getChildHtml('alert_urls') ?>
-                    <?php echo $this->getChildHtml('other');?>
-                </div>
-                <?php if (!$this->hasOptions()):?>
-                    <div class="clearer"></div>
-                    <div class="add-to-box">
-                        <?php if($_product->isSaleable()): ?>
-                            <?php echo $this->getChildHtml('addtocart') ?>
-<!--                            --><?php //if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
-<!--                            --><?php //endif; ?>
+                            <!--                            <img class="product-image" src="--><?php //echo $image_src; ?><!--" alt="--><?php //echo $this->__('Previous');?><!--"/>-->
+                            <!--                            <h3 class="product-name">--><?php //echo $_helper->productAttribute($_next, $_next->getName(), 'name') ?><!--</h3>-->
+                            <!--                        </div>-->
+                            <!--                    </div>-->
+                            <!--                    --><?php //endif; ?>
+                            <!--                </div>-->
+                            <?php
+                        }
+                        ?>
+                        <div class="product-name">
+                            <h1 <?php if($enabled_richsnippets): ?>itemprop="name"<?php endif; ?>><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+                        </div>
+                        <div class="product-info">
+                            <div <?php if($enabled_richsnippets) echo $helper_richsnippets->getOfferItemscope(); ?>>
+                                <?php echo $this->getChildHtml('product_type_data'); ?>
+                                <?php echo $this->getTierPriceHtml(); ?>
+                                <?php echo $price_properties; ?>
+                            </div>
+                            <?php echo $this->getChildHtml('extrahint') ?>
+                            <!--                    --><?php //if ($this->canEmailToFriend()): ?>
+                            <!--                        <p class="email-friend"><a href="--><?php //echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?><!--">--><?php //echo $this->__('Email to a Friend') ?><!--</a></p>-->
+                            <!--                    --><?php //endif; ?>
+                            <?php if($sku = $_product->getSku()): ?>
+                                <?php if($enabled_richsnippets): ?><meta itemprop="productID" content="sku:<?php echo $sku; ?>" /><?php endif; ?>
+                            <?php endif; ?>
+                            <?php echo $this->getChildHtml('alert_urls') ?>
+                            <?php echo $this->getChildHtml('other');?>
+                        </div>
+                        <?php if (!$this->hasOptions()):?>
+                            <div class="clearer"></div>
+                            <div class="add-to-box">
+                                <?php if($_product->isSaleable()): ?>
+                                    <?php echo $this->getChildHtml('addtocart') ?>
+                                    <!--                            --><?php //if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+                                    <!--                            --><?php //endif; ?>
+                                <?php endif; ?>
+                                <!--                        --><?php //echo $this->getChildHtml('addto') ?>
+                            </div>
+                            <?php echo $this->getChildHtml('extra_buttons') ?>
+                        <?php elseif (!$_product->isSaleable()): ?>
+                            <div class="clearer"></div>
+                            <div class="add-to-box">
+                                <?php echo $this->getChildHtml('addto') ?>
+                            </div>
                         <?php endif; ?>
-<!--                        --><?php //echo $this->getChildHtml('addto') ?>
+                        <!--                --><?php //echo $this->getReviewsSummaryHtml($_product, false, true)?>
+                        <?php if ($_product->getShortDescription()):?>
+                            <div class="short-description">
+                                <h2><?php echo $this->__('Quick Overview') ?></h2>
+                                <div class="std" <?php if($enabled_richsnippets): ?>itemprop="description"<?php endif; ?>><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+                            </div>
+                        <?php endif;?>
+
+
+
+                        <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                            <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+                        <?php endif;?>
+
+                        <?php echo $this->getChildHtml('smartwave_sharetool'); ?>
                     </div>
-                    <?php echo $this->getChildHtml('extra_buttons') ?>
-                <?php elseif (!$_product->isSaleable()): ?>
-                    <div class="clearer"></div>
-                    <div class="add-to-box">
-                        <?php echo $this->getChildHtml('addto') ?>
-                    </div>
-                <?php endif; ?>
-<!--                --><?php //echo $this->getReviewsSummaryHtml($_product, false, true)?>
-                <?php if ($_product->getShortDescription()):?>
-                    <div class="short-description">
-                        <h2><?php echo $this->__('Quick Overview') ?></h2>
-                        <div class="std" <?php if($enabled_richsnippets): ?>itemprop="description"<?php endif; ?>><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
-                    </div>
-                <?php endif;?>
+                </div>
 
-
-
-                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-                    <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-                <?php endif;?>
-
-                <?php echo $this->getChildHtml('smartwave_sharetool'); ?>
             </div>
-
         </div>
         <?php if ($_product->isSaleable() && $this->hasOptions()):?>
             <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
         <?php endif;?>
         <?php echo $this->getBlockHtml('catalog.product.related'); ?>
     </form>
+        <style>
+
+        </style>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery('.box-up-sell').addClass('container');
+            })
+        </script>
+        <div class="also-customer">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-3 also-content">
+                            <div class="link-also ">
+                                <p>Delivery Options</p>
+                                <span>See if  deliver to your area></span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 also-content">
+                            <div class="logo-also">
+                                <img src="../skin/frontend/smartwave/porto_child/images/oto-icon.png" alt="" class="img-responsive">
+                            </div>
+                            <div class="text-also ">
+                                <p>$10 flat rate shipping</p>
+                                <span>for orders under $150</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 also-content">
+                            <div class="logo-also ">
+                                <img src="../skin/frontend/smartwave/porto_child/images/oto-icon-2.png" alt="" class="img-responsive">
+                            </div>
+                            <div class="text-also ">
+                                <p>FREE shipping</p>
+                                <span>for all orders over $150</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 also-content">
+                            <div class="logo-also pull-left">
+                                <img src="../skin/frontend/smartwave/porto_child/images/icon-3.png" alt="" class="img-responsive">
+                            </div>
+                            <div class="text-also ">
+                                <p>FREE click & collect</p>
+                                <span>from Gregory Hills, NVW</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 <?php if(Mage::getStoreConfig('ajaxcart/addtocart/enableproduct') && (Mage::app()->getFrontController()->getRequest()->getModuleName() == "catalog") || (Mage::app()->getFrontController()->getRequest()->getModuleName() == "quickview")): ?>
     <script type="text/javascript">
     //<![CDATA[

@@ -17,7 +17,7 @@
 }
 .email-box{
     padding-top: 62px;
-    padding-bottom: 15px;
+    /*padding-bottom: 15px;*/
     color: white;
     font-size: 16px;
     text-align: right;
@@ -82,7 +82,7 @@
 .footer-middle a{
     color: #474747;
     font-size:14px;
-    font-weight: normal;
+    font-weight: bold;
 }
 .footer-middle a:hover{
     color: red;
@@ -130,8 +130,41 @@
     margin-left: 15px;
     cursor: pointer;
 }
+.footer-respon ul li{
+    display: inherit;
+    text-align: left;
+    padding-bottom: 20px;
+}
 
-@media (min-width: 320px) and (max-width: 424px){
+.footer-respon{
+    display: none;
+}
+@media (min-width: 320px) and (max-width: 425px){
+    .facebook-icon{
+        float: left;
+    }
+    .twitter-icon{
+        float: right;
+    }
+    .footer-respon{
+        display: block;
+    }
+    .link-bottom{
+        display: none;
+    }
+    #contact{
+        width:100%;
+        margin:0;
+    }
+    .footer-destop{
+        display: none;
+    }
+    .line-footer{
+        display: none;
+    }
+    .btn-contact{
+        padding:20px 0 10px 0;
+    }
     .email-box{
         text-align: left;
         padding-left: 15px;
@@ -146,12 +179,20 @@
         width: 200px;
         margin-left: 0px;
     }
-    #email-btn{margin-top: 0}
+    #email-btn{
+        margin-top: 0
+    }
     .social{
         margin-left: 5px;
     }
+    .footer-content{
+        display: none;
+    }
 }
-@media (min-width: 425px) and (max-width: 767px){
+@media (min-width: 426px) and (max-width: 767px){
+    .footer-respon{
+        display: none;
+    }
     .text-sign{
         padding-top: 0;
     }
@@ -160,6 +201,7 @@
         padding-left: 10px;
         padding-top: 0;
     }
+
     .sign-up{
         padding-bottom: 0;
         padding-left: 10px;
@@ -167,6 +209,9 @@
     .connect{text-align: left}
 }
 @media (min-width: 768px) and (max-width: 991px){
+    .footer-respon{
+        display: none;
+    }
     .text-sign{
         padding-top: 0;
     }

@@ -5,7 +5,7 @@ $code = $store->getCode();
 $custom_block = Mage::getStoreConfig('porto_settings/header/static_block', $code);
 ?>
 <div class="header-container type8">
-    <div class="">
+    <div class="wrap">
         <div class="header container">
             <div class="">
                 <div class="col-12 col-sm-4 col-md-4" style="text-align: center">
@@ -32,7 +32,8 @@ $custom_block = Mage::getStoreConfig('porto_settings/header/static_block', $code
                             </div>
                             <div class="menu-icon">
                                 <a href="javascript:void(0)" title="<?php echo $this->__('Menu'); ?>">
-                                    <i class="fa fa-bars"></i>
+<!--                                    <i class="fa fa-bars"></i>-->
+                                    <span>MENU</span>
                                 </a>
                             </div>
                             <div class="switcher-area">
@@ -61,7 +62,7 @@ $custom_block = Mage::getStoreConfig('porto_settings/header/static_block', $code
         </div>
     </div>
     <?php echo $this->getChildHtml('topMenu') ?>
-    <div class="bot-menu row">
+    <div class="bot-menu">
         <div class="container">
             <div class="col-md-12">
                 <p style="margin: inherit">We deliver to metro areas in Sydney, Melbourner and Canberra for a flat  $10 • See if we deliver  to your  area <span class="glyphicon glyphicon-chevron-right"></span></p>

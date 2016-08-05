@@ -12,6 +12,14 @@
     text-align: center;
     margin: 0 0 15px;
 }
+/*.short-description p{*/
+    /*font-size: 15px;*/
+    /*font-family: 'Open Sans', sans-serif;*/
+    /*color: rgb(68, 68, 68);*/
+    /*font-weight: bold;*/
+    /*line-height: 1.2;*/
+/*}*/
+
 .product-label{
     right:0;
     top:inherit;
@@ -25,4 +33,15 @@ span.new-product-icon{
     background-color: transparent;
     padding: 0;
     line-height: 2.5;
+}
+.share-mobile{
+    display: none;
+}
+@media (max-width: 425px) {
+    .product-view .box-up-sell >h2 span{
+        font-size: 25px;
+    }
+    .share-mobile{
+        display: block;
+    }
 }

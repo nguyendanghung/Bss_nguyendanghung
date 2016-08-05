@@ -1,6 +1,6 @@
-<!--<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>-->
-<!--<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>-->
-<!--<link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>-->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
 <?php
     $_helper = $this->helper('catalog/output');
     $helper_richsnippets = $this->helper('porto/richsnippets');
@@ -31,9 +31,13 @@
     <div class="product-essential">
         <div class="come-back">
             <div class="container">
-                    <a href="" onclick="goBack()">< Back</a>
+               <?php
+                    $productLink = Mage::getModel('catalog/product')->load(prodId);
+                    $ids = $productLink->getCategoryId();
+                    $categoryLink = Mage::getModel('catalog/category')->load($ids);
+                    echo "<a href='".$categoryLink->getUrl()."'>"."< Back to ".$categoryLink->getName()."</a>";
+                ?>
             </div>
-
         </div>
     <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
         <?php echo $this->getBlockHtml('formkey') ?>
@@ -108,7 +112,8 @@ if($enable_addtocart_sticky){
                 <?php if($_product->isSaleable()): ?>
                 <?php $buttonTitle = $this->__('ADD TO BASKET'); ?>
                     <div class="add-to-cart">
-                        <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?><i class="icon-cart"></i></span></span></button>
+                        <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?>
+                                    <img src="<?php echo $this->getSkinUrl('images/cart.png');  ?>" alt=""></span></span></button>
                     </div>
                 <?php endif; ?>
             </div>
@@ -117,7 +122,7 @@ if($enable_addtocart_sticky){
 <?php
 }
 ?>
-        <div class="row">
+        <div class="">
             <div class="container">
                 <div class="row">
                     <div class="product-img-box col-sm-8">
@@ -211,7 +216,18 @@ if($enable_addtocart_sticky){
                             <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
                         <?php endif;?>
 
-                        <?php echo $this->getChildHtml('smartwave_sharetool'); ?>
+                        <b class="print">Print ></b>
+                        <script>
+                            jQuery(document).ready(function(){
+                                jQuery('.print').on('click', function(){
+                                    window.print();
+                                })
+                            })
+                        </script>
+                        <div class="share-desktop">
+                            <?php echo $this->getChildHtml('smartwave_sharetool'); ?>
+                        </div>
+
                     </div>
                 </div>
 
@@ -231,7 +247,7 @@ if($enable_addtocart_sticky){
             })
         </script>
         <div class="also-customer">
-            <div class="row">
+            <div class="">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-sm-3 also-content">
@@ -242,7 +258,7 @@ if($enable_addtocart_sticky){
                         </div>
                         <div class="col-xs-12 col-sm-3 also-content">
                             <div class="logo-also">
-                                <img src="../skin/frontend/smartwave/porto_child/images/oto-icon.png" alt="" class="img-responsive">
+                                <img src="<?php echo $this->getSkinUrl('images/oto-icon.png');  ?>" alt="" class="img-responsive">
                             </div>
                             <div class="text-also ">
                                 <p>$10 flat rate shipping</p>
@@ -251,7 +267,7 @@ if($enable_addtocart_sticky){
                         </div>
                         <div class="col-xs-12 col-sm-3 also-content">
                             <div class="logo-also ">
-                                <img src="../skin/frontend/smartwave/porto_child/images/oto-icon-2.png" alt="" class="img-responsive">
+                                <img src="<?php echo $this->getSkinUrl('images/oto-icon-2.png');?>" alt="" class="img-responsive">
                             </div>
                             <div class="text-also ">
                                 <p>FREE shipping</p>
@@ -260,7 +276,7 @@ if($enable_addtocart_sticky){
                         </div>
                         <div class="col-xs-12 col-sm-3 also-content">
                             <div class="logo-also pull-left">
-                                <img src="../skin/frontend/smartwave/porto_child/images/icon-3.png" alt="" class="img-responsive">
+                                <img src="<?php echo $this->getSkinUrl('images/icon-3.png');?>" alt="" class="img-responsive">
                             </div>
                             <div class="text-also ">
                                 <p>FREE click & collect</p>
@@ -270,6 +286,9 @@ if($enable_addtocart_sticky){
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="share-mobile">
+            <?php echo $this->getChildHtml('smartwave_sharetool'); ?>
         </div>
 <?php if(Mage::getStoreConfig('ajaxcart/addtocart/enableproduct') && (Mage::app()->getFrontController()->getRequest()->getModuleName() == "catalog") || (Mage::app()->getFrontController()->getRequest()->getModuleName() == "quickview")): ?>
     <script type="text/javascript">

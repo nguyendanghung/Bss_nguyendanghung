@@ -176,8 +176,51 @@
     background-color: black;
 }
 /*-------------main-----------------*/
+@media (max-width: 320px) {
 
+    .mini-cart {
+        margin-right: -99px ;
+        margin-top: -212px ;
+    }
+}
 @media (max-width: 425px){
+    .top-links-area{
+        display: none !important;
+    }
+    .wrap{
+        position: relative;
+    }
+    .switcher-area{
+        position: absolute;
+        top: -43px;
+        right: 0;
+    }
+    .menu-icon {
+        position: absolute;
+        top: -40px;
+        left: 0;
+    }
+    .header .logo img{
+        width:55%;
+    }
+    .menu-icon{
+        margin-top: -147px ;
+        margin-right: 220px;
+    }
+    .menu-icon span{
+        color: red;
+        border: 1px solid red;
+    }
+    .text-header{
+        display: none;
+    }
+    .mini-cart{
+        margin-right: -156px;
+        margin-top: -250px ;
+    }
+    .cart-info , .price-total{
+        display: none !important;
+    }
     .col-12 {
         width: 100%;
     }

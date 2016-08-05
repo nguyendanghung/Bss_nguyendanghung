@@ -10,6 +10,12 @@
     bottom: 48%;
     display: none;
 }
+.color-red{
+    color: red;
+}
+.color-black{
+    color: black;
+}
 .product-view .product-img-box li.etalage_thumb:hover .fancy-images{
     display: block;
     background-color: white;
@@ -19,4 +25,20 @@
 }
 .btn-default{
     background-color: white;
+}
+.act-img{
+    display: none;
+}
+@media (min-width: 425px) {
+    #act-1 {
+        position: absolute;
+        font-size: 30px;
+        left: 40%;
+    }
+
+    #act-2 {
+        position: absolute;
+        font-size: 30px;
+        right: 40%
+    }
 }

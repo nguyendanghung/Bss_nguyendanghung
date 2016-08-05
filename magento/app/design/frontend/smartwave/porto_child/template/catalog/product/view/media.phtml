@@ -49,6 +49,8 @@
 </ul>
 <?php endif; ?>
 <div class="etalage-control">
+    <span id="act-1" class="color-red act-img">•</span>
+    <span id="act-2" class="color-black act-img">•</span>
 <?php if (!Mage::getStoreConfig("porto_settings/general/rtl",$code)) : ?>
     <a href="javascript:void(0)" class="etalage-prev"><i class="icon-angle-left"></i></a>
     <a href="javascript:void(0)" class="etalage-next"><i class="icon-angle-right"></i></a>
@@ -79,8 +81,33 @@
             reloadEtalage();
             var width = jQuery(this).width();
         });
-        jQuery('.etalage-prev').on('click', function(){ etalage_<?php echo $rnd_str; ?>_previous(); });
-        jQuery('.etalage-next').on('click', function(){ etalage_<?php echo $rnd_str; ?>_next(); });
+        jQuery('.etalage-prev').on('click', function(){
+            etalage_<?php echo $rnd_str; ?>_previous();
+
+            var object = jQuery('.act-img');
+            for (var i = 0; i < object.length; i++){
+                if (jQuery(object[i]).hasClass('color-red')){
+                    jQuery(object[i]).removeClass('color-red').addClass('color-black');
+                }
+                else if (jQuery(object[i]).hasClass('color-black')){
+                    jQuery(object[i]).removeClass('color-black').addClass('color-red');
+                }
+            }
+
+        });
+        jQuery('.etalage-next').on('click', function(){
+            etalage_<?php echo $rnd_str; ?>_next();
+            var object = jQuery('.act-img');
+            for (var i = 0; i < object.length; i++){
+                if (jQuery(object[i]).hasClass('color-red')){
+                    jQuery(object[i]).removeClass('color-red').addClass('color-black');
+                }
+                else if (jQuery(object[i]).hasClass('color-black')){
+                    jQuery(object[i]).removeClass('color-black').addClass('color-red');
+                }
+            }
+
+        });
         jQuery("a.fancy-images_<?php echo $rnd_str; ?>").fancybox();
         function reloadEtalage(){
             var width = jQuery('.product-view .product-img-box').width()-8;

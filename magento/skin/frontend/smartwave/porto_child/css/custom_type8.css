@@ -166,8 +166,11 @@
     font-size: 14px !important;
     font-weight: 500 !important;
     line-height: 3;
+    color: white;
 }
-
+.bot-menu > .container >.col-md-12 > span{
+    color: white;
+}
 /*--------------- sticky----------------------*/
 .header-container.sticky-header .main-nav .menu > li{
     padding:0;
@@ -184,6 +187,9 @@
     }
 }
 @media (max-width: 425px){
+    .form-search{
+        display: none;
+    }
     .top-links-area{
         display: none !important;
     }
@@ -239,6 +245,10 @@
     .bot-menu > .container >.col-md-12 > p{
         font-size: 12px !important;
         line-height: 1.5;
+        display: none;
+    }
+    .bot-menu > .container >.col-md-12 > span{
+        color: white;
     }
     .bot-menu > .container >.col-md-12{
         padding-top: 10px;

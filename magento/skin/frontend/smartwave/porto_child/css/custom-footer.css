@@ -189,6 +189,11 @@
         display: none;
     }
 }
+@media (max-width: 425px) {
+    .footer-bottom .custom-block{
+        float: none;
+    }
+}
 @media (min-width: 426px) and (max-width: 767px){
     .footer-respon{
         display: none;

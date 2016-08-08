@@ -29,7 +29,7 @@
     margin-top: 0;
     border-bottom: 0    ;
 }
-.product-view .product-shop .price-box .regular-price .price{
+.regular-price{
     font-size: 35px;
     font-family: 'PT Sans', sans-serif;
     font-weight: bold;
@@ -77,6 +77,30 @@
 }
 .add-to-box{
     margin-top: 0;
+}
+.product-info .price-per-kilo{
+    float: left;
+    width: 30%;
+    padding-top: 30px;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+}
+.product-info .price-box{
+    float: left;
+    width: 40%;
+}
+.product-info .product-view .product-shop .price-box{
+    margin: 0;
+}
+.col1-layout .product-view .product-info{
+    width:100%;
+    margin-bottom: 20px;
+}
+.product-info .price{
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
 }
 /*----------------image------------------*/
 
@@ -141,6 +165,9 @@
     width: 80% !important;
 }
 .addthis_button_print{
+    display: none;
+}
+.addthis_button_compact{
     display: none;
 }
 .addthis_button_ketnooi{
@@ -217,7 +244,25 @@ a.addtocart{
 .etalage_smallthumb_active{
    border: 3px solid red !important;
 }
+@media (max-width: 320px) {
+    .add-to-cart button.button{
+        width: 220px !important;
+    }
+
+}
+@media (width: 375px) {
+    .add-to-cart button.button{
+        width: 275px !important;
+    }
+
+}
 @media (max-width: 425px) {
+    .add-to-cart button.button{
+        width: 325px;
+    }
+    .add-to-cart button.button span{
+        font-size: 13px;
+    }
     .act-img{
         display: block !important;
     }
@@ -261,6 +306,7 @@ a.addtocart{
     .link-also span{
         display: block;
         font-size: 18px;
+        text-align: center;
     }
     .print, .share-desktop{
         display: none;
@@ -289,7 +335,20 @@ a.addtocart{
         display: none;
     }
 }
+@media (min-width: 426px) and (max-width: 766px) {
+    .also-content {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .also-customer{
+        padding:30px;
+        height:auto;
+    }
+}
 @media (min-width: 768px) and (max-width: 991px) {
+    .add-to-cart button.button{
+        width: 150px;
+    }
     .also-customer{
         height:auto;
     }
@@ -298,5 +357,55 @@ a.addtocart{
     }
     .logo-also{
         margin-left: 25%;
+    }
+    .price-per-kilo{
+        float: left;
+        width: 30%;
+        padding-top: 30px;
+        color: black;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+    }
+    .price-box{
+        float: left;
+        width: 40%;
+    }
+    .product-view .product-shop .price-box{
+        margin: 0;
+    }
+    .col1-layout .product-view .product-info{
+        width:100%;
+        margin-bottom: 20px;
+    }
+    .price{
+        color: black;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+    }
+}
+@media (min-width: 992px) {
+    .price-per-kilo{
+        float: left;
+        width: 30%;
+        padding-top: 30px;
+        color: black;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+    }
+    .price-box{
+        float: left;
+        width: 40%;
+    }
+    .product-view .product-shop .price-box{
+        margin: 0;
+    }
+    .col1-layout .product-view .product-info{
+        width:100%;
+        margin-bottom: 20px;
+    }
+    .price{
+        color: black;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
     }
 }

@@ -174,6 +174,10 @@ if($enable_addtocart_sticky){
                                 <?php echo $this->getChildHtml('product_type_data'); ?>
                                 <?php echo $this->getTierPriceHtml(); ?>
                                 <?php echo $price_properties; ?>
+                                <div class="price-per-kilo">
+                                    <?php echo Mage::helper('core')->currency(number_format(((Mage::helper('tax')->getPrice($_product, $_product->getFinalPrice())) / $_product->getWeight()) * 1000,2),true,true); ?>
+                                    <?php echo $this->__("/ kilo")?>
+                                </div>
                             </div>
                             <?php echo $this->getChildHtml('extrahint') ?>
                             <!--                    --><?php //if ($this->canEmailToFriend()): ?>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <danghung_checkuser>
+            <version>1.1.1</version>
+        </danghung_checkuser>
+    </modules>
+    <global>
+        <models>
+            <danghung_checkuser>
+                <class>DangHung_CheckUser_Model</class>
+            </danghung_checkuser>
+        </models>
+        <blocks>
+            <danghung_checkuser>
+                <class>DangHung_CheckUser_Block</class>
+            </danghung_checkuser>
+        </blocks>
+        <helpers>
+            <danghung_checkuser>
+                <class>DangHung_CheckUser_Helper</class>
+            </danghung_checkuser>
+        </helpers>
+        <events>
+            <controller_action_predispatch_checkout_onepage_index>
+                <observers>
+                    <danghung_checkuser>
+                        <type>singleton</type>
+                        <class>danghung_checkuser/observer</class>
+                        <method>checkUser</method>
+                    </danghung_checkuser>
+                </observers>
+            </controller_action_predispatch_checkout_onepage_index>
+        </events>
+    </global>
+    <frontend>
+
+
+    </frontend>
+
+</config>

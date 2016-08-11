@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <DangHung_CheckUser>
+            <active>true</active>
+            <codePool>local</codePool>
+        </DangHung_CheckUser>
+    </modules>
+</config>
